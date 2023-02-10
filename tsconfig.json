@@ -1,28 +1,36 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "declaration": true,
-    "removeComments": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "es2017",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "baseUrl": "./",
-    "incremental": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noImplicitAny": true,
-    "strictBindCallApply": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "resolveJsonModule": true,
-    "paths": {
-      "@app/*": ["./src/app/*"],
-      "@infra/*": ["./src/infra/*"],
-      "@helpers/*": ["./src/helpers/*"],
-      "@test/*": ["./test/*"]
-    }
+  "compilerOptions":{
+      "module":"commonjs",
+      "declaration":true,
+      "removeComments":true,
+      "emitDecoratorMetadata":true,
+      "experimentalDecorators":true,
+      "allowSyntheticDefaultImports":true,
+      "target":"es2017",
+      "sourceMap":true,
+      "outDir":"./dist",
+      "baseUrl":"./",
+      "incremental":true,
+      "skipLibCheck":true,
+      "strict":true,
+      "noImplicitAny":true,
+      "strictBindCallApply":true,
+      "forceConsistentCasingInFileNames":true,
+      "noFallthroughCasesInSwitch":true,
+      "resolveJsonModule":true,
+      "paths":{
+          "@app/*":[
+              "./src/app/*"
+          ],
+          "@infra/*":[
+              "./src/infra/*"
+          ],
+          "@helpers/*":[
+              "./src/helpers/*"
+          ],
+          "@test/*":[
+              "./test/*"
+          ]
+      }
   }
 }
