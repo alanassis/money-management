@@ -1,39 +1,25 @@
-type CategoryContent =
-  | 'HOME'
-  | 'CONTACTS'
-  | 'ENTERTAINMENT'
-  | 'GENERAL'
-  | 'FOOD'
-  | 'INVESTMENT'
-  | 'TRANSPORT'
-  | 'COSMETIC';
+export enum CategoryType {
+  General = 'GENERAL',
+}
 
 export class Category {
-  private readonly content: string;
+  private readonly content: CategoryType;
 
-  public get value(): string {
+  public get value(): CategoryType {
     return this.content;
   }
 
-  constructor(content: CategoryContent | string) {
-    if (!this.isAllowedValue(content)) {
+  constructor(content?: CategoryType | string) {
+    if (content && !this.isAllowedValue(content)) {
       throw new Error('Invalid Category value.');
     }
 
-    this.content = content;
+    this.content = (content as CategoryType) || CategoryType.General;
   }
 
   private isAllowedValue(content: string): boolean {
-    const ALLOWED_VALUES = [
-      'HOME',
-      'CONTACTS',
-      'ENTERTAINMENT',
-      'GENERAL',
-      'FOOD',
-      'INVESTMENT',
-      'COSMETIC',
-    ];
-
-    return ALLOWED_VALUES.includes(content);
+    return Object.values(CategoryType).includes(
+      content as unknown as CategoryType,
+    );
   }
 }

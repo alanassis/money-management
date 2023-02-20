@@ -36,6 +36,11 @@ export class PrismaTransactionsRepository implements TransactionsRepository {
     });
   }
 
+  async createMany(transactions: Transaction[]): Promise<void> {
+    const rawNotifications = transactions.map(PrismaTransactionMapper.toPrisma);
+    await this.prisma.transaction.createMany({ data: rawNotifications });
+  }
+
   async update(transaction: Transaction): Promise<void> {
     const rawNotification = PrismaTransactionMapper.toPrisma(transaction);
     await this.prisma.transaction.update({
