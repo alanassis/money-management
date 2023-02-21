@@ -1,5 +1,14 @@
 export enum CategoryType {
-  General = 'GENERAL',
+  None = 'NONE',
+  Food = 'FOOD',
+  Family = 'FAMILY',
+  Education = 'EDUCATION',
+  Leisure = 'LEISURE',
+  Travel = 'TRAVEL',
+  Housing = 'HOUSING',
+  Clothing = 'CLOTHING',
+  Transport = 'TRANSPORT',
+  Health = 'HEALTH',
 }
 
 export class Category {
@@ -14,7 +23,7 @@ export class Category {
       throw new Error('Invalid Category value.');
     }
 
-    this.content = (content as CategoryType) || CategoryType.General;
+    this.content = (content as CategoryType) || CategoryType.None;
   }
 
   private isAllowedValue(content: string): boolean {
