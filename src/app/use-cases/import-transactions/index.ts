@@ -19,7 +19,11 @@ export class ImportTransactionsFile {
     provider,
   }: ImportTransactionsFileRequest): Promise<void> {
     if (provider === 'NUBANK') {
-      const transactions = this.readNubankFile.execute({ file });
+      const transactions = await this.readNubankFile.execute({
+        file,
+        provider,
+      });
+
       await this.transactionsRepository.createMany(transactions);
     }
   }

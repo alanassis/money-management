@@ -15,3 +15,9 @@ model Transaction {
   performedAt DateTime
   createdAt   DateTime
 }
+
+model IntegrationImport {
+  externalId  String   @id
+  provider    String
+  processedAt DateTime
+}
